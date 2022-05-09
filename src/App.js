@@ -4,7 +4,7 @@ import TaskList from "./components/TasksList/TaskList";
 import { addTaskActionCreator } from "./redux/features/tasksSlice/tasksSlice";
 
 function App() {
-  const tasks = useSelector((state) => state.tasks);
+  const tasks = useSelector((state) => state.tasks.myTasks);
   const dispatch = useDispatch();
 
   const addTask = (task) => {

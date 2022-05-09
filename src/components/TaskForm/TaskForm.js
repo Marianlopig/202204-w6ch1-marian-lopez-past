@@ -9,7 +9,7 @@ const TaskForm = ({ action }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const task = { name: taskName };
+    const task = { name: taskName, done: false };
     action(task);
   };
 

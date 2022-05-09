@@ -2,9 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const tasksSlice = createSlice({
   name: "tasks",
-  initialState: [],
+  initialState: { myTasks: [], lastId: 0 },
   reducers: {
-    addTask: (state, action) => [...state, action.payload],
+    addTask: (state, action) => {
+      action.payload.id = state.lastId++;
+      state.myTasks.push(action.payload);
+      return state;
+    },
   },
 });
 
