@@ -1,11 +1,15 @@
-import { useState } from "react";
-
-const TaskList = () => {
-  const [tasks, setTasks] = useState([]);
-
+const TaskList = ({ tasks }) => {
   return (
     <div>
-      <ul></ul>
+      <ul>
+        {tasks.map((task) => {
+          return (
+            <li>
+              {task.id}-{task.name}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
